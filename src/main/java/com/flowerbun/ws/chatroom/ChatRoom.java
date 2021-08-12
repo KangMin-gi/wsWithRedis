@@ -35,6 +35,10 @@ public class ChatRoom {
     this.sendAll(message.getMessage());
   }
 
+  public boolean existUser(WebSocketSession session) {
+    return this.sessions.contains(session);
+  }
+
   private void sendAll(String message) {
     TextMessage textMessage = new TextMessage(message);
     this.sessions.forEach(session -> {

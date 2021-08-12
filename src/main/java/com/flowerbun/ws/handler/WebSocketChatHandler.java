@@ -25,7 +25,8 @@ public class WebSocketChatHandler extends TextWebSocketHandler {
     log.info("payload {}", payload);
 
     ChatMessage chatMessage = this.objectMapper.readValue(payload, ChatMessage.class);
-    this.chatService.joinChatRoom(session, chatMessage);
+//    this.chatService.joinChatRoom(session, chatMessage);
+    this.chatService.sendMessage(session, chatMessage);
 
 //    super.handleTextMessage(session, message);
   }

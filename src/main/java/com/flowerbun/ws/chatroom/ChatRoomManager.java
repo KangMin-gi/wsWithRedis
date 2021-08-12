@@ -44,6 +44,10 @@ public class ChatRoomManager {
     return chatRoom;
   }
 
+  public boolean isChatUser(WebSocketSession session, ChatRoom chatRoom) {
+    return chatRoom.existUser(session);
+  }
+
   private void addRoom(ChatRoom chatRoom) {
     String roomId = chatRoom.getRoomId();
     validRoomId(roomId);
