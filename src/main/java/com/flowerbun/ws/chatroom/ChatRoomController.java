@@ -31,7 +31,6 @@ public class ChatRoomController {
         .stream()
         .map(ChatRoomResponse::new)
         .collect(Collectors.toList());
-
     return new ResponseEntity<>(list, HttpStatus.OK);
   }
 
