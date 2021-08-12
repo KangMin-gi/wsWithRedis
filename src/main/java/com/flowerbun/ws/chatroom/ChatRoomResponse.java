@@ -1,11 +1,10 @@
 package com.flowerbun.ws.chatroom;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 
 @Getter
 public class ChatRoomResponse {
+
   private String roomId;
   private String roomName;
 

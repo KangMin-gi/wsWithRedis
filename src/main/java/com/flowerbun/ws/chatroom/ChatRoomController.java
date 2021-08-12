@@ -1,6 +1,5 @@
 package com.flowerbun.ws.chatroom;
 
-import com.flowerbun.ws.chatservice.ChatService;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
@@ -31,6 +30,7 @@ public class ChatRoomController {
         .stream()
         .map(ChatRoomResponse::new)
         .collect(Collectors.toList());
+
     return new ResponseEntity<>(list, HttpStatus.OK);
   }
 

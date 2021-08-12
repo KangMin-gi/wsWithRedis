@@ -1,7 +1,6 @@
 package com.flowerbun.ws.chatroom;
 
 import com.flowerbun.ws.chatmessage.ChatMessage;
-import com.flowerbun.ws.chatmessage.MessageType;
 import com.flowerbun.ws.exception.Common500Exception;
 import com.flowerbun.ws.exception.Errors;
 import java.io.IOException;
