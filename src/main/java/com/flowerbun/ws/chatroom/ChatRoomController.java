@@ -33,5 +33,5 @@ public class ChatRoomController {
 
     return new ResponseEntity<>(list, HttpStatus.OK);
   }
-
+ // TODO : 메세지브로커 관련 코드 추가 필요
 }
