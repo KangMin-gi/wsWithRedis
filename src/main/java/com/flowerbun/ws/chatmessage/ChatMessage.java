@@ -1,10 +1,12 @@
 package com.flowerbun.ws.chatmessage;
 
-import com.flowerbun.ws.exception.Common500Exception;
-import com.flowerbun.ws.exception.Errors;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
 public class ChatMessage {
 
   private String roomId;
@@ -12,14 +14,18 @@ public class ChatMessage {
   private String message;
   private MessageType messageType;
 
-  public String helloMessage() {
-    validHello();
-    return senderName + " 님이 입장 하셨습니다.";
+  public String genMessage() {
+    if (this.isJoin()) {
+      return this.helloMessage();
+    }
+    return this.message;
   }
 
-  public void validHello() {
-    if (messageType != MessageType.ENTER) {
-      throw Common500Exception.of(Errors.WRONG_MESSAGE_TYPE);
-    }
+  public boolean isJoin() {
+    return this.messageType == MessageType.ENTER;
+  }
+
+  private String helloMessage() {
+    return senderName + " 님이 입장 하셨습니다.";
   }
 }

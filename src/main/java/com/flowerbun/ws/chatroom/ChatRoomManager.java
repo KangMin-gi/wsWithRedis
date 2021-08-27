@@ -12,7 +12,7 @@ import org.springframework.util.ObjectUtils;
 @Component
 public class ChatRoomManager {
 
-  private final Map<String, ChatRoom> chatRoomMap;
+  private final Map<String, ChatRoom> chatRoomMap; // DB or Redis
   private final RoomIdGenerator roomIdGenerator;
 
   public ChatRoomManager(RoomIdGenerator roomIdGenerator) {

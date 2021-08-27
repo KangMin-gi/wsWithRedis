@@ -31,9 +31,8 @@ public class ChatRoomController {
         .map(ChatRoomResponse::new)
         .collect(Collectors.toList());
 
-
-
     return new ResponseEntity<>(list, HttpStatus.OK);
   }
  // TODO : 메세지브로커 관련 코드 추가 필요
+
 }
